@@ -6,28 +6,28 @@ namespace TesteTeoria
 {
     public class Particula
     {
-        private decimal _v = 0;  // Backing store
-        private decimal _m = 0;  // Backing store
-        private decimal _e = 0;  // Backing store
-        private decimal _g = 0;  // Backing store
+        private double _v = 0;  // Backing store
+        private double _m = 0;  // Backing store
+        private double _e = 0;  // Backing store
+        private double _g = 0;  // Backing store
 
-        public decimal V { get => _m + _v; set { _v += value; } }
-        public decimal M { get => _v - _g; set { _m += value; } }
-        public decimal E { get => _v + _m; set { _e = value; } }
-        public decimal G { get => _m + _e; set { _g = value; } }
+        public double V { get => _m + _v; set { _v += value; } }
+        public double M { get => _v - _g; set { _m += value; } }
+        public double E { get => _v * _m; set { _e = value; } }
+        public double G { get => _m + _e ; set { _g = value; } }
 
-        public Particula(int v, int m, int e, int g)
+        public Particula(double v, double m, double e, double g)
         {
             V = v;
-            M = M;
-            E = E;
-            G = G;
+            M = m;
+            E = e;
+            G = g;
         }
 
         public void Run()
         {
-            M = M;
             V = V;
+            M = M;
             E = E;
             G = G;
         }
