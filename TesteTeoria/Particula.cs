@@ -1,37 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TesteTeoria
 {
-    public class Particula
+    internal class Particula
     {
-        private double _v = 0;  // Backing store
-        private double _m = 0;  // Backing store
-        private double _e = 0;  // Backing store
-        private double _g = 0;  // Backing store
+        public int _NC;
 
-        public double V { get => _m + _v; set { _v += value; } }
-        public double M { get => _v - _g; set { _m += value; } }
-        public double E { get => _v * _m; set { _e = value; } }
-        public double G { get => _m + _e ; set { _g = value; } }
+        public Elemento elemento;
 
-        public Particula(double v, double m, double e, double g)
+        private int Tempo { get => elemento.Tempo + Potencia; }
+        public int Potencia { get => _NC - elemento.Gravidade; }
+
+        private List<Carga> Cargas { get; set; }
+
+        public Particula(Elemento elemento)
         {
-            V = v;
-            M = m;
-            E = e;
-            G = g;
+            this.elemento = elemento;
         }
 
-        public void Run()
+        private void CriarParticulas(int numeroDeParticulas)
         {
-            V = V;
-            M = M;
-            E = E;
-            G = G;
+            while (numeroDeParticulas <= Cargas.Count)
+            {
+                Cargas.Add(new Carga(this));
+            }
         }
 
-
+        internal void Run()
+        {
+            foreach (var carga in Cargas)
+            {
+                carga.Run();
+            }
+        }
     }
 }

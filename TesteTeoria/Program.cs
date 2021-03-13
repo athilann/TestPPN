@@ -8,7 +8,7 @@ namespace TesteTeoria
         {
             Console.WriteLine("Hello World!");
 
-            var particula = new Particula(0,4, 0, 0);
+            var particula = new Particula(1,1, 1, 0);
             Console.WriteLine("----Inicio----");
 
 
@@ -25,13 +25,7 @@ namespace TesteTeoria
             {
                 Console.WriteLine("----Clico " + count + " ----");
                 particula.Run();
-                Console.WriteLine("V: " + particula.V);
-                Console.WriteLine("M: " + particula.M);
-                Console.WriteLine("E: " + particula.E);
-                Console.WriteLine("G: " + particula.G);
-                Console.WriteLine("-----------------");
-                Console.WriteLine("");
-                Console.WriteLine("");
+               
                 count++;
             }
             Console.ReadLine();
