@@ -8,14 +8,14 @@ namespace TesteTeoria
         {
             Console.WriteLine("Hello World!");
 
-            var particula = new Particula(1,1, 1, 0);
+            var particula = new Massa(4);
             Console.WriteLine("----Inicio----");
 
 
-            Console.WriteLine("V: " + particula.V);
-            Console.WriteLine("M: " + particula.M);
-            Console.WriteLine("E: " + particula.E);
-            Console.WriteLine("G: " + particula.G);
+            Console.WriteLine("Tempo: " + particula.Tempo);
+            Console.WriteLine("Espaco: " + particula.Espaco);
+            Console.WriteLine("NP: " + particula._NP);
+            Console.WriteLine("P: " + particula._P);
             Console.WriteLine("-----------------");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -25,7 +25,13 @@ namespace TesteTeoria
             {
                 Console.WriteLine("----Clico " + count + " ----");
                 particula.Run();
-               
+                Console.WriteLine("Tempo: " + particula.Tempo);
+                Console.WriteLine("Espaco: " + particula.Espaco);
+                Console.WriteLine("NP: " + particula._NP);
+                Console.WriteLine("P: " + particula._P);
+                Console.WriteLine("-----------------");
+                Console.WriteLine("");
+                Console.WriteLine("");
                 count++;
             }
             Console.ReadLine();

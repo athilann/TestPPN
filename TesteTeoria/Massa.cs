@@ -6,7 +6,7 @@ namespace TesteTeoria
 {
     public class Massa
     {
-        private int _P;
+        public int _P;
         public int _NP;
         private int _espaco;
         private int _tempo;
@@ -25,10 +25,10 @@ namespace TesteTeoria
 
         private void CriarElementos(int numeroDeParticulas)
         {
+            Elementos = new List<Elemento>();
             _NP = numeroDeParticulas;
             while (numeroDeParticulas <= Elementos.Count)
             {
-                Elementos = new List<Elemento>();
                 Elementos.Add(new Elemento(this));
             }
         }

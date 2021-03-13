@@ -21,6 +21,8 @@ namespace TesteTeoria
 
         private void CriarParticulas(int numeroDeParticulas)
         {
+            _NC = numeroDeParticulas;
+            Cargas = new List<Carga>();
             while (numeroDeParticulas <= Cargas.Count)
             {
                 Cargas.Add(new Carga(this));

@@ -14,12 +14,14 @@ namespace TesteTeoria
 
         public Elemento(Massa massa)
         {
-            _NE = massa._NP;
             this.massa = massa;
+            CriarParticulas(massa._NP);
         }
 
         private void CriarParticulas(int numeroDeParticulas)
         {
+            Particulas = new List<Particula>();
+            _NE = numeroDeParticulas;
             while (numeroDeParticulas <= Particulas.Count)
             {
                 Particulas.Add(new Particula(this));
