@@ -14,6 +14,8 @@ namespace PEqualsNP
         public double A { get => ((Eletrons * Espaco + Neutrons) / Neutrons * 3); }
         public double Carga { get { return (A * (A + Espaco)); } }
         public double Espaco { get { return (Entropia * 0.5); } }
+        public double Negatividade { get { return ((Protons + Eletrons) / 1.5); } }
+        public double Positividade { get { return (Protons / 1.5); } }
         public double EstadoXYZ
         {
             get
@@ -39,14 +41,20 @@ namespace PEqualsNP
         {
             get
             {
-                return 0;
+                if (CargaNeutra % 2 == 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
         public double CargaNeutra
         {
             get
             {
-                var i = CargaEletrica;
                 return (EstadoXYZ - ((Protons + Eletrons - 1) / 2));
             }
         }
@@ -55,17 +63,22 @@ namespace PEqualsNP
         {
             get
             {
-                var negatividade = ((Protons + Eletrons) / 1.5);
-                var positividade = (Protons / 1.5);
-                var valorEletrico = EstadoEletrico;
+                var negatividade =  Negatividade;
+                var positividade = Positividade;
                 if (positividade % 2 == 0)
                 {
                     return 1;
                 }
+                else if (EstadoEletrico % A > 1)
+                {
+                    return 0.5;
+                }
+                else
+                {
+                    return 1.5;
+                }
 
-
-
-                return (EstadoEletrico - ((Protons + Eletrons) / 1.5));
+                //return (EstadoEletrico - ((Protons + Eletrons) / 1.5));
             }
         }
 
