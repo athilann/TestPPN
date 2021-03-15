@@ -63,6 +63,8 @@ namespace PEqualsNP
                     return 1;
                 }
 
+
+
                 return (EstadoEletrico - ((Protons + Eletrons) / 1.5));
             }
         }
