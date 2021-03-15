@@ -41,7 +41,7 @@ namespace PEqualsNP
         {
             get
             {
-                if (CargaNeutra % 2 == 0)
+                if (CargaNeutra % 2 == 1 && Neutrons > 0)
                 {
                     return 1;
                 }
@@ -63,7 +63,6 @@ namespace PEqualsNP
         {
             get
             {
-                var negatividade =  Negatividade;
                 var positividade = Positividade;
                 if (positividade % 2 == 0)
                 {
@@ -87,6 +86,23 @@ namespace PEqualsNP
             get
             {
                 return (Carga * Entropia) / Entropia * 3;
+            }
+        }
+
+        public string SinalEletricoParticula
+        {
+            get
+            {
+                var sinal = Neutralidade + CargaEletrica;
+
+                switch (sinal)
+                {
+                    case 2: return "Neutra";
+                    case 1.5: return "Positiva";
+                    case 1: return "Eletricamente Neutra | Naturamente +-";
+                    case 0.5: return "Negativa";
+                    default: return "Deu ruim";
+                }
             }
         }
     }

@@ -89,6 +89,7 @@ namespace PEqualsNP
                                   $" E = {elemento.Eletrons} \n" +
                                   $" Neutralidade ={elemento.Neutralidade} \n" +
                                   $" Carga eletrica ={elemento.CargaEletrica} \n" +
+                                  $" Sinal Eletrico ={elemento.SinalEletricoParticula} \n" +
                                   $" CN = {elemento.CargaNeutra} \n" +
                                   $" Espaco  = {elemento.Espaco} \n" +
                                   $" EstadoXYZ = {elemento.EstadoXYZ} \n" +
